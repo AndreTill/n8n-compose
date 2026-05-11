@@ -30,7 +30,7 @@ jobs:
         run: ssh staging 'cd /root/n8n-compose && docker compose down'
 
       - name: Check out the source
-        run: ssh staging 'cd /root/n8n-compose && git fetch && git reset --hard origin/master'
+        run: ssh staging 'cd /root/n8n-compose && git pull'
 
       - name: Start the server
         if: ${{ always() }}
